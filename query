@@ -1,0 +1,89 @@
+SHOW DATABASES;
+CREATE DATABASE university;
+USE university;
+
+DROP TABLE `Users`;
+desc Users;
+CREATE TABLE `student` (
+                           `studentId`	bigint	NOT NULL,
+                           `userId`	bigint	NOT NULL,
+                           `resgistraionId`	bigint	NOT NULL,
+                           `professorId`	bigint	NOT NULL,
+                           `credit`	tinyint	NULL
+);
+
+CREATE TABLE `subject` (
+                           `subjectId`	bigint	NOT NULL,
+                           `subjectName`	varchar(20)	NOT NULL,
+                           `subjectInfo`	varchar(255)	NULL,
+                           `majorId`	bigint	NOT NULL,
+                           `professorId`	bigint	NOT NULL
+);
+
+CREATE TABLE `professor` (
+                             `professorId`	bigint	NOT NULL,
+                             `userId`	bigint	NOT NULL
+);
+
+CREATE TABLE `major` (
+                         `majorId`	bigint	NOT NULL,
+                         `major`	varchar(100)	NOT NULL
+);
+
+INSERT INTO `major`
+(majorId, major) VALUES (1, '국문학과'),
+                        (2, '게임공학과'),
+                        (3, '컴퓨터공학과'),
+                        (4, '경영학과'),
+                        (5, '건축학과');
+SELECT * FROM major;
+
+CREATE TABLE `Users` (
+                         `userId`	bigint	NOT NULL,
+                         `password`	varchar(255)	NOT NULL,
+                         `name`	varchar(100)	NOT NULL,
+                         `birth`	date	NOT NULL,
+                         `address`	varchar(255)	NOT NULL,
+                         `majorId`	bigint	NOT NULL,
+                         `role`	varchar(100)	NOT NULL	DEFAULT '학생',
+                         `status`	varchar(255)	NOT NULL	DEFAULT '교수'
+);
+
+SELECT *FROM`Users`;
+DELETE
+    FROM `Users`
+WHERE userId=16110127;
+INSERT INTO Users
+(userId, password, name, birth, address, majorId, role, status)
+VALUES
+    (16110127,1234, '김기찬', '1997-11-19', '대연동', 2, '학생', '휴학');
+
+CREATE TABLE `Course` (
+                            `resgistrationId`	bigint	NOT NULL,
+                            `subjectId`	bigint	NOT NULL,
+                            `sore`	varchar(10)	NULL
+);
+
+ALTER TABLE `student` ADD CONSTRAINT `PK_STUDENT` PRIMARY KEY (
+                                                               `studentId`
+    );
+
+ALTER TABLE `subject` ADD CONSTRAINT `PK_SUBJECT` PRIMARY KEY (
+                                                               `subjectId`
+    );
+
+ALTER TABLE `professor` ADD CONSTRAINT `PK_PROFESSOR` PRIMARY KEY (
+                                                                   `professorId`
+    );
+
+ALTER TABLE `major` ADD CONSTRAINT `PK_MAJOR` PRIMARY KEY (
+                                                           `majorId`
+    );
+
+ALTER TABLE `Users` ADD CONSTRAINT `PK_USERS` PRIMARY KEY (
+                                                           `userId`
+    );
+
+ALTER TABLE `Course` ADD CONSTRAINT `PK_UNTITLED` PRIMARY KEY (
+                                                                 `resgistraionId`
+    );
