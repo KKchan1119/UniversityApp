@@ -28,22 +28,22 @@ public class LoginController extends HttpServlet {
         response.setContentType("text/html;charset=UTF-8");
         PrintWriter out = response.getWriter();
 
-            if (user != null) {
-                if (user.getPassword().equals(password)) {
-                    out.println("로그인 성공입니다.<br>");
-                    out.println("<a href='/'>다시 로그인</a>");
-//                    RequestDispatcher dispatcher =
-//                            request.getRequestDispatcher("main.do");
-//                    dispatcher.forward(request, response);
-                } else {
-                    out.println("비밀번호 오류입니다.<br>");
-                    out.println("<a href='/'>다시 로그인</a>");
-                }
+        if (user != null) {
+            if (user.getPassword().equals(password)) {
+                // 로그인 성공 시 main.html로 리다이렉트
+                response.sendRedirect("main.html");
             } else {
-                out.println("아이디 오류입니다.<br>");
-                out.println("<a href='/'>다시 로그인</a>");
+                showLoginFailAlert(response);
             }
-
-
+        } else {
+            showLoginFailAlert(response);
+        }
     }
+    private void showLoginFailAlert(HttpServletResponse response) throws IOException {
+        response.getWriter().println("<script>");
+        response.getWriter().println("alert('로그인 실패입니다.');");
+        response.getWriter().println("location.href = '/';");
+        response.getWriter().println("</script>");
+    }
+
 }
