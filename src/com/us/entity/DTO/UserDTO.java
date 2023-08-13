@@ -1,4 +1,4 @@
-package com.us.entity;
+package com.us.entity.DTO;
 
 import java.sql.Date;
 
@@ -12,6 +12,15 @@ public class UserDTO {
     private long majorId;
     private String role;
     private String status;
+    private String userImageUrl;
+
+    public String getUserImageUrl() {
+        return userImageUrl;
+    }
+
+    public void setUserImageUrl(String userImageUrl) {
+        this.userImageUrl = userImageUrl;
+    }
 
     public long getUserId() {
         return userId;

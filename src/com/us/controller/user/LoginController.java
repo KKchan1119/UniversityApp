@@ -1,7 +1,7 @@
-package com.us.controller;
+package com.us.controller.user;
 
 import com.us.entity.DAO.UserDAO;
-import com.us.entity.UserDTO;
+import com.us.entity.DTO.UserDTO;
 
 import javax.servlet.*;
 import javax.servlet.http.*;
@@ -22,7 +22,7 @@ public class LoginController extends HttpServlet {
         dto.setUserId(Long.parseLong(userId));
 
         UserDAO dao = new UserDAO();
-        UserDTO user = dao.getUser(dto);
+        UserDTO user = dao.getUserLogin(dto);
 
 
         response.setContentType("text/html;charset=UTF-8");
@@ -30,8 +30,11 @@ public class LoginController extends HttpServlet {
 
             if (user != null) {
                 if (user.getPassword().equals(password)) {
-                    out.println(user.getName() + "님 접속을 환영합니다.<br>");
-                    out.println("<a href='/Info.do>정보 페이지로 이동</a>");
+                    out.println("로그인 성공입니다.<br>");
+                    out.println("<a href='/'>다시 로그인</a>");
+//                    RequestDispatcher dispatcher =
+//                            request.getRequestDispatcher("main.do");
+//                    dispatcher.forward(request, response);
                 } else {
                     out.println("비밀번호 오류입니다.<br>");
                     out.println("<a href='/'>다시 로그인</a>");

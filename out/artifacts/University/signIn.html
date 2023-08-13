@@ -5,17 +5,18 @@
     <link rel="stylesheet" href="css/signIn.css">
     <link href="https://fonts.googleapis.com/earlyaccess/notosanskr.css" rel="stylesheet">
     <title>회원가입</title>
+    <script src="js/signIn.js"></script>
 </head>
 <body>
 <div class="signIn-form">
-    <form action="insertUser.do" method="post">
+    <form name="signInForm" action="insertUser.do" method="post">
         <div>회원가입</div>
         <input type="text" class="text-field" name="userId" placeholder="학번 또는 교번"/>
-        <input type="text" class="text-field"name="name" placeholder="이름"/>
-        <input type="password" class="text-field" name="password" placeholder="이름"/><br>
-        <input type="text" class="text-field" name="birth" placeholder="이름"/>
-        <input type="text" class="text-field"name="address" placeholder="이름"/><br>
-        <select name="majorId"class="text-field">
+        <input type="text" class="text-field" name="name" placeholder="이름"/>
+        <input type="password" class="text-field" name="password" placeholder="비밀번호"/><br>
+        <input type="text" class="text-field" name="birth" placeholder="생년월일 ex)0000-00-00"/>
+        <input type="text" class="text-field" name="address" placeholder="주소"/><br>
+        <select name="majorId" class="text-field">
             <option>---------------전공선택---------------</option>
             <option value="1">국문학과</option>
             <option value="2">게임공학과</option>
@@ -25,7 +26,7 @@
 
         </select><br>
 
-        <select name="status"class="text-field">
+        <select name="status" class="text-field">
             <option>---------------재적상태---------------</option>
             <option value="재학">재학</option>
             <option value="휴학">휴학</option>
@@ -33,9 +34,9 @@
             <option value="재직">재직</option>
         </select>
         <input type="checkbox" name="role" value="학생" checked/>학생
-        <input type="checkbox"name="role"value="교수"/>교수<br>
-        <input type="submit" value="회원가입" class="login-btn"/>
-        <input type="reset" value="취소" class="signIn-btn"/>
+        <input type="checkbox" name="role" value="교수"/>교수<br>
+        <input type="button" onclick="fn_checkEmptyInfo()" value="회원가입" class="login-btn"/>
+        <input type="button" onclick="goToLoginPage()" value="취소" class="signIn-btn"/>
     </form>
 </div>
 </body>

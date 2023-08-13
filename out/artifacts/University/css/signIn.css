@@ -10,14 +10,13 @@ body {
 }
 .signIn-form{
     width: 300px;
-    background-color: aliceblue;
     margin-right: auto;
     margin-left: auto;
     margin-top: 50px;
     padding: 20px;
     text-align: center;
-    border: none;
-    box-shadow: 1px 1px 2px darkgrey;
+    border-radius: 20px;
+    box-shadow: 0 5px 10px -3px gray;
 }
 .text-field {
     font-size: 14px;

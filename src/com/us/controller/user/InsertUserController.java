@@ -1,13 +1,12 @@
-package com.us.controller;
+package com.us.controller.user;
 
 import com.us.entity.DAO.UserDAO;
-import com.us.entity.UserDTO;
+import com.us.entity.DTO.UserDTO;
 
 import javax.servlet.*;
 import javax.servlet.http.*;
 import javax.servlet.annotation.*;
 import java.io.IOException;
-import java.io.PrintWriter;
 import java.sql.Date;
 
 @WebServlet("/insertUser.do")
@@ -38,5 +37,6 @@ public class InsertUserController extends HttpServlet {
         dao.insertUserList(dto);
 
         response.sendRedirect("login.html");
+
     }
 }

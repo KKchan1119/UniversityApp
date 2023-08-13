@@ -1,0 +1,602 @@
+body {
+    margin: auto;
+    width: 1440px;
+    height: 1020px;
+}
+
+
+/* 헤더 */
+header {
+    width: 1440px;
+    height: 150px;
+}
+
+/* 메가대학교 */
+#header_h {
+    width: 100%;
+    height: 75px;
+    border-bottom: 1px solid #f1f1f1;
+}
+
+#header_h h1 {
+    float: left;
+    margin: 15px 50px;
+}
+
+/* 로그아웃 */
+#logout {
+    float: right;
+    margin: 15px 30px;
+    padding: 10px;
+    font-size: 15px;
+    color: #fff;
+    border-radius: 5px;
+    background-color: #000;
+}
+
+#logout:hover {
+    cursor: pointer;
+}
+
+/* 로그아웃 박스 생성 */
+#logout_box {
+    width: 625px;
+    height: 290px;
+    position: absolute;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 20px;
+    background-color: #fff;
+    box-shadow : rgba(0,0,0,0.5) 0 0 0 9999px;
+    display: none;
+}
+
+/* 로그아웃 박스 내부 */
+#logout_box .logout_box_text {
+    margin: 50px 60px;
+}
+
+#logout_box .logout_box_text h3, h2 {
+    margin-bottom: 10px;
+}
+
+#logout_box .logout_box_text p {
+    color: #bdbdbd;
+}
+
+/* 확인, 취소 버튼 */
+#logout_box .logout_box_check {
+    margin: auto;
+    width: 370px;
+    height: 70px;
+    display: flex;
+    justify-content: space-between;
+}
+
+#logout_box .logout_box_check p {
+    padding-top: 20px;
+    width: 170px;
+    height: 40px;
+    text-align: center;
+    border-radius: 5px;
+    border: 1px solid #000;
+}
+
+#logout_box .logout_box_check p:hover {
+    cursor: pointer;
+}
+
+#logout_box .logout_box_check .ok {
+    color: #fff;
+    background-color: #000;
+}
+
+
+/* OOO님 안녕하세요! */
+#header_b {
+    width: 100%;
+    height: 75px;
+}
+
+#header_b .header_in {
+    margin-left: 50px;
+    line-height: 75px;
+    font-size: 25px;
+    font-weight: 500;
+}
+
+
+/* 메인 */
+#main {
+    width: 100%;
+    height: 870px;
+    background-color: #f8f8ff;
+    box-shadow: 0 5px 10px -5px gray inset;
+}
+
+#profile {
+    padding-top: 50px;
+    width: 100%;
+    height: 215px;
+}
+
+/* 프로필 박스 생성 */
+#profile_in {
+    margin: auto;
+    width: 1300px;
+    height: 215px;
+    border-radius: 20px;
+    box-shadow: 0 5px 10px -3px gray;
+}
+
+/* 프로필 내부 */
+#profile img {
+    float: left;
+    margin: 30px;
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+}
+
+#info {
+    float: right;
+    width: 1080px;
+    height: 215px;
+}
+
+#info .info_main {
+    float: left;
+    width: 180px;
+    height: 215px;
+}
+
+#info .info_main>li {
+    margin-top: 25px;
+    font-size: 20px;
+    display: flex;
+    align-items: center;
+}
+
+#info .info_main>li:nth-child(1) {
+    margin-top: 35px;
+    font-size: 25px;
+}
+
+#info .info_main>li span {
+    padding: 15px 0 0;
+    margin-left: 10px;
+    font-size: 13px;
+    color: gray;
+}
+
+#info .info_title {
+    margin-top: 40px;
+    float: right;
+    width: 900px;
+    display: flex;
+}
+
+#info .info_title>li {
+    width: 150px;
+    font-size: 18px;
+}
+
+#info .info_title>li:last-child {
+    width: 590px;
+}
+
+#info .info_text {
+    float: right;
+    width: 900px;
+    display: flex;
+}
+
+#info .info_text>li {
+    margin-top: 5px;
+    width: 150px;
+    font-size: 13px;
+    color: gray;
+}
+
+#info .info_text>li:last-child {
+    width: 590px;
+}
+
+
+/* 아래 왼쪽 섹션 */
+#section_l {
+    float: left;
+    width: 920px;
+    height: 605px;
+}
+
+/* 수강 과목 박스 생성*/
+#subject {
+    float: right;
+    margin-top: 50px;
+    width: 840px;
+    height: 515px;
+    border-radius: 20px;
+    box-shadow: 0 5px 10px -3px gray;
+}
+
+/* 수강 과목 내부 */
+#subject .subject_h {
+    width: 840px;
+    height: 100px;
+}
+
+#subject .subject_h h2 {
+    float: left;
+    margin: 30px 30px;
+}
+
+#subject .subject_h p {
+    float: right;
+    margin: 0 30px;
+    font-size: 50px;
+}
+
+#subject .subject_h p:hover {
+    cursor: pointer;
+}
+
+/* 수강 과목 생성 박스 */
+#create_subject_box {
+    width: 625px;
+    height: 600px;
+    position: absolute;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #fff;
+    border-radius: 20px;
+    box-shadow : rgba(0,0,0,0.5) 0 0 0 9999px;
+    display: none;
+}
+
+#create_subject_box .create_subject_box_text {
+    margin: 50px;
+}
+
+#create_subject_box .create_subject_box_text h3, h2 {
+    margin-bottom: 10px;
+}
+
+#create_subject_box .create_subject_box_text p {
+    color: #bdbdbd;
+}
+
+#create_subject_box .create_subject_box_text input {
+    padding: 10px;
+    margin-top: 30px;
+    width: 500px;
+    height: 30px;
+    border-radius: 10px;
+    font-size: 20px;
+    background-color: #f1f1f1;
+}
+
+#create_subject_box .create_subject_box_check {
+    margin: auto;
+    width: 180px;
+    height: 40px;
+    display: flex;
+    justify-content: space-between;
+}
+
+#create_subject_box .create_subject_box_check p {
+    width: 80px;
+    height: 35px;
+    text-align: center;
+    line-height: 35px;
+    border-radius: 5px;
+    border: 1px solid #000;
+}
+
+#create_subject_box .create_subject_box_check p:hover {
+    cursor: pointer;
+}
+
+#create_subject_box .create_subject_box_check .create {
+    color: #fff;
+    background-color: #000;
+}
+
+/* 수강 과목 리스트 */
+#subject .subject_b {
+    margin: auto;
+    width: 780px;
+    height: 400px;
+}
+
+#subject .subject_b ul {
+    display: flex;
+}
+
+/* 과목명 */
+#subject .subject_b li {
+    font-size: 18px;
+    width: 250px;
+    height: 35px;
+    line-height: 35px;
+    text-align: center;
+    border-bottom: 1px solid rgb(220, 220, 220);
+}
+
+/* 교수 */
+#subject .subject_b li:nth-child(2) {
+    width: 180px;
+}
+
+/* 학점 */
+#subject .subject_b li:nth-child(3) {
+    width: 80px;
+}
+
+/* 전공/교양 */
+#subject .subject_b li:nth-child(4) {
+    width: 180px;
+}
+
+/* 설정 */
+#subject .subject_b li:last-child {
+    width: 90px;
+}
+
+/* 수강 과목 설정 버튼 */
+#setting_button {
+    width: 100px;
+    height: 60px;
+    position: absolute;
+    position: fixed;
+    top: 80%;
+    left: 55%;
+    text-align: center;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 5px 10px -3px gray;
+}
+
+#setting_button p {
+    line-height: 30px;
+}
+
+#setting_button p:hover {
+    cursor: pointer;
+    background-color: #f1f1f1;
+}
+
+#setting_button p:nth-child(1):hover {
+    height: 29px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    border-bottom: 1px solid rgb(220, 220, 220);
+}
+
+#setting_button p:nth-child(2):hover {
+    height: 29px;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    border-top: 1px solid rgb(220, 220, 220);
+}
+
+/* 수강 과목 제거 버튼 생성 */
+#delete_box {
+    width: 625px;
+    height: 290px;
+    position: absolute;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 20px;
+    background-color: #fff;
+    box-shadow : rgba(0,0,0,0.5) 0 0 0 9999px;
+    display: none;
+}
+
+/* 수강 과목 제거 내부 */
+#delete_box .delete_box_text {
+    margin: 50px 60px;
+}
+
+#delete_box .delete_box_text h3, h2 {
+    margin-bottom: 10px;
+}
+
+#delete_box .delete_box_text p {
+    color: #bdbdbd;
+}
+
+/* 확인, 취소 버튼 */
+#delete_box .delete_box_check {
+    margin: auto;
+    width: 370px;
+    height: 70px;
+    display: flex;
+    justify-content: space-between;
+}
+
+#delete_box .delete_box_check p {
+    padding-top: 20px;
+    width: 170px;
+    height: 40px;
+    text-align: center;
+    border-radius: 5px;
+    border: 1px solid #000;
+}
+
+#delete_box .delete_box_check p:hover {
+    cursor: pointer;
+}
+
+#delete_box .delete_box_check .ok {
+    color: #fff;
+    background-color: #000;
+}
+
+
+
+/* 수강 과목 수정 박스 */
+#update_subject_box {
+    width: 625px;
+    height: 600px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #fff;
+    border-radius: 20px;
+    box-shadow : rgba(0,0,0,0.5) 0 0 0 9999px;
+    display: none;
+}
+
+#update_subject_box .update_subject_box_text {
+    margin: 50px;
+}
+
+#update_subject_box .update_subject_box_text h3, h2 {
+    margin-bottom: 10px;
+}
+
+#update_subject_box .update_subject_box_text p {
+    color: #bdbdbd;
+}
+
+#update_subject_box .update_subject_box_text input {
+    padding: 10px;
+    margin-top: 30px;
+    width: 500px;
+    height: 30px;
+    border-radius: 10px;
+    font-size: 20px;
+    background-color: #f1f1f1;
+}
+
+#update_subject_box .update_subject_box_check {
+    margin: auto;
+    width: 180px;
+    height: 40px;
+    display: flex;
+    justify-content: space-between;
+}
+
+#update_subject_box .update_subject_box_check p {
+    width: 80px;
+    height: 35px;
+    text-align: center;
+    line-height: 35px;
+    border-radius: 5px;
+    border: 1px solid #000;
+}
+
+#update_subject_box .update_subject_box_check p:hover {
+    cursor: pointer;
+}
+
+#update_subject_box .update_subject_box_check .update {
+    color: #fff;
+    background-color: #000;
+}
+
+
+/* 아래 오른쪽 섹션 */
+#section_r {
+    float: right;
+    width: 520px;
+    height: 605px;
+}
+
+/* 이수 학점 박스 생성 */
+#credit {
+    margin: 50px 30px;
+    width: 425px;
+    height: 190px;
+    border-radius: 20px;
+    box-shadow: 0 5px 10px -3px gray;
+}
+
+/* 이수 학점 내부 */
+#credit .credit_h {
+    width: 425px;
+    height: 80px;
+}
+
+#credit .credit_h h2 {
+    float: left;
+    margin: 30px 30px 0;
+}
+
+/* 학점표 */
+#credit .credit_b {
+    margin: auto;
+    width: 360px;
+    height: 80px;
+}
+
+#credit .credit_b ul {
+    float: left;
+    display: flex;
+    text-align: center;
+}
+
+#credit .credit_b li {
+    width: 120px;
+    height: 35px;
+    line-height: 35px;
+    border-bottom: 1px solid rgb(220, 220, 220);
+}
+
+
+/* 시간표 박스 생성 */
+#timetable {
+    margin: 50px 30px;
+    width: 425px;
+    height: 275px;
+    border-radius: 20px;
+    box-shadow: 0 5px 10px -3px gray;
+}
+
+/* 시간표 내부 */
+#timetable .timetable_h {
+    width: 425px;
+    height: 60px;
+}
+
+#timetable .timetable_h h2 {
+    float: left;
+    margin: 30px 30px 0;
+}
+
+/* 시간표 */
+#timetable .timetable_b {
+    margin: 20px auto;
+    width: 350px;
+    height: 160px;
+}
+
+/* 시간표 내부 */
+#timetable .timetable_b ul {
+    float: left;
+    width: 360px;
+    text-align: center;
+    display: flex;
+}
+
+#timetable .timetable_b ul li {
+    margin-right: 5px;
+    margin-bottom: 5px;
+    width: 60px;
+}
+
+#timetable .timetable_b ul li:last-child {
+    margin-right: 0px;
+}
+
+#timetable .timetable_b ul li p {
+    font-size: 14px;
+}
