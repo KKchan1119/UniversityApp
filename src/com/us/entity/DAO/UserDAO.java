@@ -6,7 +6,6 @@ import com.us.entity.DTO.StudentDTO;
 import com.us.entity.DTO.UserDTO;
 
 import java.sql.*;
-import java.text.SimpleDateFormat;
 
 public class UserDAO {
     private Connection conn = null;
@@ -14,36 +13,35 @@ public class UserDAO {
     private ResultSet rs = null;
     private String GET_USER_ACCESS_INFO = "SELECT * FROM Users WHERE userId =?";
     private String INSERT_USER = "INSERT INTO Users" +
-            "(userId, password, `name`, birth, address, majorId, `role`, status, userImageUrl)" +
-            "VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)";
+            "(userId, password, name, birth, address, majorId, role, status)" +
+            "VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
     private String SELECT_USER = "SELECT * FROM `Users`";
     private String GET_STUDENT_INFO =
-            "SELECT S.studentId AS 학번, `U1`.name AS 이름," +
-            "       `U1`.birth AS 생년월일, `U2`.name AS 지도교수," +
-            "       `U1`.status AS 재적상태, `U1`.address AS 주소" +
-            "FROM Student S" +
-            "INNER JOIN Users U1 ON S.studentId =U1.userId" +
-            "INNER JOIN Professor P ON S.professorId = P.userId" +
-            "INNER Join Users U2 ON P.userId = U2.userId WHERE S.studentId =?";
-
-    public StudentDTO getStudent(UserDTO dto){
-        StudentDTO student = null;
+    "SELECT S.studentId, U1.name, U1.birth, U2.name, U1.role, U1.status, U1.address "+
+    "FROM Student S "+
+    "INNER JOIN Users U1 ON S.studentId = U1.userId "+
+    "INNER JOIN Professor P ON S.professorId = P.userId "+
+    "INNER JOIN Users U2 ON P.userId = U2.userId "+
+    "WHERE S.studentId = ?";
+    public StudentDTO getStudent(String sId){
+        StudentDTO student = new StudentDTO();
         try{
             conn = DBConnection.getConnection();
             psmt = conn.prepareStatement(GET_STUDENT_INFO);
-            psmt.setLong(1, dto.getUserId());
+            psmt.setString(1, sId.trim());
             rs = psmt.executeQuery();
             while(rs.next()){
-                student = new StudentDTO();
                 student.setStudentId(rs.getLong("S.studentId"));
-                student.setName(rs.getString("`U1`.name"));
-                student.setBirth(rs.getDate("`U1`.birth"));
-                student.setAdvisor(rs.getString("`U2`.name"));
-                student.setStatus(rs.getString("`U1`.status"));
-                student.setAddress(rs.getString("`U1`.address"));
+                student.setName(rs.getString("U1.name"));
+                student.setRole(rs.getString("U1.Role"));
+                student.setBirth(rs.getDate("U1.birth"));
+                student.setAdvisor(rs.getString("U2.name"));
+                student.setStatus(rs.getString("U1.status"));
+                student.setAddress(rs.getString("U1.address"));
             }
         }catch (SQLException e){
-
+            e.printStackTrace();
+            System.out.println(e.getMessage());
         }
         return student;
     }
@@ -87,7 +85,6 @@ public class UserDAO {
                 user.setMajorId(rs.getLong("majorId"));
                 user.setRole(rs.getString("role"));
                 user.setStatus(rs.getString("status"));
-                user.setUserImageUrl(rs.getString("userImageUrl"));
             }
         }catch (SQLException e){
             e.printStackTrace();
@@ -111,7 +108,7 @@ public class UserDAO {
             psmt.setLong(6, dto.getMajorId());
             psmt.setString(7, dto.getRole().trim());
             psmt.setString(8, dto.getStatus());
-            psmt.setString(9,dto.getUserImageUrl());
+
             psmt.executeUpdate();
             if(dto.getRole().equals("학생")){
                 try{

@@ -4,6 +4,7 @@ const subjectContent = document.querySelector('.subject .subject-content');
 const subjectCreateBtn = document.querySelector(
     '.modal-wrapper .subject-create-btn'
 );
+
 const subjectCancelBtn = document.querySelector(
     '.modal-wrapper .subject-cancel-btn'
 );
@@ -29,52 +30,11 @@ subjectBody.addEventListener('click', async (e) => {
         updateId = id;
     }
 });
-
-async function readSubject(id) {
-    const subjectNameInput = document.querySelector('.subject-update-name-input');
-    const subjectProfessorInput = document.querySelector(
-        '.subject-update-professor-input'
-    );
-    const subjectGradeInput = document.querySelector(
-        '.subject-update-grade-input'
-    );
-    const subjectTypeInput = document.querySelector('.subject-update-type-input');
-
-    const res = await fetch(`http://localhost:5000/subjects/${parseInt(id)}`, {
-        method: 'GET',
-        headers: { 'Content-Type': 'application/json' },
-    });
-    const data = await res.json();
-    subjectNameInput.value = data.title;
-    subjectProfessorInput.value = data.professor;
-    subjectGradeInput.value = data.credit;
-    subjectTypeInput.value = data.type;
-}
-
-document.querySelector('.subject-update-btn').addEventListener('click', () => {
-    updateSubject(updateId);
-});
-
-async function updateSubject(id) {
-    const subjectNameInput = document.querySelector('.subject-update-name-input');
-    const subjectProfessorInput = document.querySelector(
-        '.subject-update-professor-input'
-    );
-    const subjectGradeInput = document.querySelector(
-        '.subject-update-grade-input'
-    );
-    const subjectTypeInput = document.querySelector('.subject-update-type-input');
-
-    await fetch(`http://localhost:5000/subjects/${id}`, {
-        method: 'PUT',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-            title: subjectNameInput.value,
-            professor: subjectProfessorInput.value,
-            credit: subjectGradeInput.value,
-            type: subjectTypeInput.value,
-        }),
-    });
+function fn_doLogout(){
+    const logoutRq = document.infoPage;
+    logoutRq.method="post";
+    logoutRq.action="main.do";
+    logoutRq.submit();
 }
 
 subjectUpdateCancelBtn.addEventListener('click', () => {

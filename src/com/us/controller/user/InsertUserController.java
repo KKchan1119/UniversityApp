@@ -11,6 +11,13 @@ import java.sql.Date;
 
 @WebServlet("/insertUser.do")
 public class InsertUserController extends HttpServlet {
+
+    @Override
+    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        RequestDispatcher dispatcher = request.getRequestDispatcher("signIn.html");
+        dispatcher.forward(request, response);
+    }
+
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         request.setCharacterEncoding("UTF-8");
@@ -36,7 +43,7 @@ public class InsertUserController extends HttpServlet {
         UserDAO dao = new UserDAO();
         dao.insertUserList(dto);
 
-        response.sendRedirect("login.html");
+        response.sendRedirect("/University");
 
     }
 }

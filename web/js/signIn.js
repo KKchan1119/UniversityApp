@@ -13,7 +13,7 @@ function fn_checkEmptyInfo() {
         signInForm.status.value,
         signInForm.role.value
     ];
-
+    console.log(formFields);
     if (formFields.some(field => field === "" || field.length === 0)) {
         alert("정보를 모두 입력해주세요.");
     } else

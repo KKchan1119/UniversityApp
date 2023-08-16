@@ -5,13 +5,23 @@ import java.util.Date;
 public class StudentDTO {
     private long studentId;
     private String name;
+
+
+
+    private String Role;
     private Date birth;
     private int age;
     private float avgScore;
     private String advisor;
     private String status;
     private String address;
+    public String getRole() {
+        return Role;
+    }
 
+    public void setRole(String role) {
+        Role = role;
+    }
     public long getStudentId() {
         return studentId;
     }
