@@ -28,7 +28,6 @@ public class UserDAO {
 
     public StudentDTO getStudent(UserDTO dto){
         StudentDTO student = null;
-        SimpleDateFormat format = new SimpleDateFormat("yyyy");
         try{
             conn = DBConnection.getConnection();
             psmt = conn.prepareStatement(GET_STUDENT_INFO);
@@ -36,13 +35,12 @@ public class UserDAO {
             rs = psmt.executeQuery();
             while(rs.next()){
                 student = new StudentDTO();
-                student.setStudentId(rs.getLong("studentId"));
-                student.setName(rs.getString("name"));
-                student.setBirth(rs.getDate("birth"));
-                student.setAge(rs.getInt("age"));
-                student.setAvgScore(rs.getFloat("avgScore"));
-                student.setAdvisor(rs.getString(""));
-
+                student.setStudentId(rs.getLong("S.studentId"));
+                student.setName(rs.getString("`U1`.name"));
+                student.setBirth(rs.getDate("`U1`.birth"));
+                student.setAdvisor(rs.getString("`U2`.name"));
+                student.setStatus(rs.getString("`U1`.status"));
+                student.setAddress(rs.getString("`U1`.address"));
             }
         }catch (SQLException e){
 
@@ -68,22 +66,7 @@ public class UserDAO {
         }catch (SQLException e){
 
         }finally {
-
-            if(conn!=null){
-                try{
-                    conn.close();
-                }catch (SQLException e){
-                }
-            }
-            if(psmt!=null){
-                try {
-                    psmt.close();
-                }catch (SQLException e){
-                }
-            }
-            if(rs !=null){
-
-            }
+            DBClose.close(rs, psmt, conn);
         }
 
         return user;

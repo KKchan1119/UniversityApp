@@ -1,250 +1,283 @@
 <!DOCTYPE html>
-<html lang="ko">
+<html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>MegaCollege</title>
-  <link rel="stylesheet" href="css/main.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>학생정보</title>
+  <link rel="stylesheet" href="./css/main.css" />
+  <link rel="stylesheet" href="./css/reset.css" />
+  <link
+          rel="stylesheet"
+          as="style"
+          crossorigin
+          href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.8/dist/web/static/pretendard.css"
+  />
+  <script src="./js/main.js" defer></script>
 </head>
-<style>
-  * {
-    margin: 0;
-    padding: 0;
-    font-weight: bold;
-    border: 0px;
-  }
-
-  img {
-    border: 0;
-  }
-
-  a {
-    text-decoration: none;
-    color: #000;
-  }
-
-  li {
-    list-style-type: none;
-  }
-</style>
-<script defer src="js/main.js"></script>
 <body>
-
-<!-- 헤더 -->
-<header>
-  <div id="header_h">
-    <a href=""><h1>메가대학교</h1></a>
-    <p  id="logout">로그아웃</p>
-
-    <!-- 로그아웃 박스 -->
-    <div id="logout_box">
-      <div class="logout_box_text">
-        <h3>메가대학교</h3>
-        <h2>로그아웃</h2>
-        <p>로그아웃 하시겠습니까?</p>
-      </div>
-      <div class="logout_box_check">
-        <p class="ok">확인</p>
-        <p class="cancel">취소</p>
-      </div>
+<form action="main.do" method="post">
+<main class="container">
+  <header class="header">
+    <div class="header-top">
+      <h1 class="title">메가대학교</h1>
+      <button class="logout-btn" type="button">로그아웃</button>
     </div>
-
-  </div>
-  <div id="header_b">
-    <div class="header_in">
-      <span>정민이 </span>님 안녕하세요!
+    <div class="header-bottom">
+      <h2 class="greeting">
+        <strong class="user-name" name="name"></strong> 님 안녕하세요!
+      </h2>
     </div>
-  </div>
-</header>
-
-<!-- 프로필 -->
-<div id="main">
-  <div id="profile">
-    <div id="profile_in">
-      <img src="/images/20230720_202927.jpg" alt="">
-      <div id="info">
-        <ul class="info_main">
-          <li>정민이<span>학생</span></li>
-          <li>정보보호학과</li>
-          <li>0.00 / 4.5</li>
-        </ul>
-        <ul class="info_title">
-          <li>학번</li>
-          <li>생년월일</li>
-          <li>나이</li>
-        </ul>
-        <ul class="info_text">
-          <li><p>16110133</p></li>
-          <li><p>1997.04.03</p></li>
-          <li><p>만 26세</p></li>
-        </ul>
-        <ul class="info_title">
-          <li>지도교수</li>
-          <li>재적상태</li>
-          <li>주소</li>
-        </ul>
-        <ul class="info_text">
-          <li><p>정민이 교수</p></li>
-          <li><p>졸업</p></li>
-          <li><p>부산광역시 사상구 모라동 불주먹</p></li>
-        </ul>
+  </header>
+  <section class="content-top">
+    <div class="profile">
+      <div class="profile-img-wrapper">
+        <img src="./image.png" alt="user-img" class="profile-img" />
       </div>
-    </div>
-  </div>
-
-  <!-- 수강 과목 -->
-  <div id="section_l">
-    <section id="subject">
-      <div class="subject_h">
-        <h2>수강 과목</h2>
-        <p id="plus">+</p>
-      </div>
-
-      <!-- 수강 과목 생성 박스 -->
-      <div id="create_subject_box">
-        <div class="create_subject_box_text">
-          <h3>메가대학교</h3>
-          <h2>수강 과목 생성</h2>
-          <p>수강 과목 정보를 입력해주세요.</p>
-          <input type="text" placeholder="교과목명">
-          <input type="text" placeholder="담당 교수">
-          <input type="text" placeholder="학점">
-          <input type="text" placeholder="전공 / 교양">
+      <div class="profile-info">
+        <div class="profile-basic-info">
+          <div class="name-wrapper">
+            <h3 class="name">김유범</h3>
+            <p class="role">학생</p>
+          </div>
+          <p class="department">게임공학과</p>
+          <p class="grade">3.88 / 4.5</p>
         </div>
-        <div class="create_subject_box_check">
-          <p class="create">생성</p>
-          <p class="cancel">취소</p>
+        <div class="profile-detail-info">
+          <div class="detail-info-top">
+            <ul class="info-list">
+              <li class="info-item">
+                <h3 class="info-item-title">학번</h3>
+                <p class="info-item-desc" name="StudentId">16110133</p>
+              </li>
+              <li class="info-item">
+                <h3 class="info-item-title">생년월일</h3>
+                <p class="info-item-desc">1997. 12. 04</p>
+              </li>
+              <li class="info-item">
+                <h3 class="info-item-title">나이</h3>
+                <p class="info-item-desc">만 25세</p>
+              </li>
+            </ul>
+          </div>
+          <div class="detail-info-bottom">
+            <ul class="info-list">
+              <li class="info-item">
+                <h3 class="info-item-title">지도교수</h3>
+                <p class="info-item-desc">왕찬현 교수</p>
+              </li>
+              <li class="info-item">
+                <h3 class="info-item-title">재적 상태</h3>
+                <p class="info-item-desc">졸업</p>
+              </li>
+              <li class="info-item">
+                <h3 class="info-item-title">주소</h3>
+                <p class="info-item-desc">
+                  부산광역시 남구 대연역 2번 출구 13번째 계단
+                </p>
+              </li>
+            </ul>
+          </div>
         </div>
       </div>
-
-      <div class="subject_b">
-        <ul>
-          <li>교과목명</li>
-          <li>담당교수</li>
-          <li>학점</li>
-          <li>전공/교양</li>
-          <li></li>
-        </ul>
-        <ul id="data">
-          <!-- 수강 과목 데이터 들어갈 곳 -->
-        </ul>
-      </div>
-
-      <!-- 수강 과목 설정 버튼 -->
-      <div id="setting_button">
-        <p id="update_button">수정</p>
-        <p id="delete_button">제거</p>
+    </div>
+  </section>
+  <section class="content-bottom">
+    <section class="subject">
+      <header class="subject-header">
+        <h2 class="subject-title">수강 과목</h2>
+        <button type="button" class="subject-add-btn">
+          <img src="./add-icon.svg" alt="subject-add subject-add-btn" />
+        </button>
+      </header>
+      <div class="subject-content">
+        <table class="subject-table">
+          <thead>
+          <tr class="subject-table-row">
+            <th
+                    class="subject-table-column subject-table-column-subject-name"
+            >
+              교과목명
+            </th>
+            <th class="subject-table-column">담당 교수</th>
+            <th class="subject-table-column">학점</th>
+            <th class="subject-table-column">전공/교양</th>
+            <th></th>
+          </tr>
+          </thead>
+          <tbody class="subject-tbody"></tbody>
+        </table>
       </div>
     </section>
-  </div>
-
-  <!-- 수강 과목 제거 버튼 -->
-  <div id="delete_box">
-    <div class="delete_box_text">
-      <h3>메가대학교</h3>
-      <h2>수강 과목 제거</h2>
-      <p>수강 과목 정보를 제거하시겠습니까?</p>
-    </div>
-    <div class="delete_box_check">
-      <p class="ok">확인</p>
-      <p class="cancel">취소</p>
-    </div>
-  </div>
-
-  <!-- 수강 과목 수정 박스 -->
-  <div id="update_subject_box">
-    <div class="update_subject_box_text">
-      <h3>메가대학교</h3>
-      <h2>수강 과목 수정</h2>
-      <p>수강 과목 정보를 입력해주세요.</p>
-      <input type="text" placeholder="교과목명">
-      <input type="text" placeholder="담당 교수">
-      <input type="text" placeholder="학점">
-      <input type="text" placeholder="전공 / 교양">
-    </div>
-    <div class="update_subject_box_check">
-      <p class="update">수정</p>
-      <p class="cancel">취소</p>
-    </div>
-  </div>
-
-  <!-- 이수 학점 -->
-  <div id="section_r">
-    <section id="credit">
-      <div class="credit_h">
-        <h2>이수 학점</h2>
+    <section class="student-study-info">
+      <div class="grade">
+        <header class="grade-header">
+          <h2 class="grade-title">이수 학점</h2>
+        </header>
+        <div class="grade-content">
+          <table class="grade-table">
+            <thead>
+            <tr class="grade-table-row">
+              <th class="grade-table-column">총 이수학점</th>
+              <th class="grade-table-column">전공</th>
+              <th class="grade-table-column">교양</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr class="grade-table-row">
+              <td class="grade-table-column">60 / 120</td>
+              <td class="grade-table-column">24 / 80</td>
+              <td class="grade-table-column">36 / 40</td>
+            </tr>
+            </tbody>
+          </table>
+        </div>
       </div>
-      <div class="credit_b">
-        <ul>
-          <li><h4>총 이수학점</h4></li>
-          <li><h4>전공</h4></li>
-          <li><h4>교양</h4></li>
-        </ul>
-        <ul>
-          <li><h4>60 / 120</h4></li>
-          <li><h4>24 / 80</h4></li>
-          <li><h4>36 / 40</h4></li>
-        </ul>
-      </div>
-    </section>
-
-    <!-- 시간표 -->
-    <section id="timetable">
-      <div class="timetable_h">
-        <h2>시간표</h2>
-      </div>
-      <div class="timetable_b">
-        <ul>
-          <li></li>
-          <li><h3>월</h3></li>
-          <li><h3>화</h3></li>
-          <li><h3>수</h3></li>
-          <li><h3>목</h3></li>
-          <li><h3>금</h3></li>
-        </ul>
-        <ul>
-          <li><p>1</p></li>
-          <li><p>영양갱...</p></li>
-          <li><p></p></li>
-          <li><p>영양갱...</p></li>
-          <li><p>부팀장...</p></li>
-          <li><p></p></li>
-        </ul>
-        <ul>
-          <li><p>2</p></li>
-          <li><p>피카츄...</p></li>
-          <li><p>피카츄...</p></li>
-          <li><p></p></li>
-          <li><p>피카츄...</p></li>
-          <li><p></p></li>
-        </ul>
-        <ul>
-          <li><p>3</p></li>
-          <li><p></p></li>
-          <li><p></p></li>
-          <li><p></p></li>
-          <li><p></p></li>
-          <li><p></p></li>
-        </ul>
-        <ul>
-          <li><p>4</p></li>
-          <li><p>침팬치...</p></li>
-          <li><p>침팬치...</p></li>
-          <li><p></p></li>
-          <li><p></p></li>
-          <li><p></p></li>
-        </ul>
-        <ul>
-          <li><p>5</p></li>
-          <li><p></p></li>
-          <li><p></p></li>
-          <li><p>부팀장...</p></li>
-          <li><p></p></li>
-          <li><p></p></li>
-        </ul>
+      <div class="time">
+        <header class="time-table-header">
+          <h2 class="time-table-title">시간표</h2>
+        </header>
+        <div class="time-table-content">
+          <table class="time-table">
+            <thead>
+            <tr class="time-table-row">
+              <th></th>
+              <th class="time-table-column">월</th>
+              <th class="time-table-column">화</th>
+              <th class="time-table-column">수</th>
+              <th class="time-table-column">목</th>
+              <th class="time-table-column">금</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr class="time-table-row">
+              <td class="time-table-column">1</td>
+              <td class="time-table-column">영양갱 경제학</td>
+              <td class="time-table-column"></td>
+              <td class="time-table-column">영양갱 경제학</td>
+              <td class="time-table-column">부팀장이란 무엇인가</td>
+              <td class="time-table-column"></td>
+            </tr>
+            <tr class="time-table-row">
+              <td class="time-table-column">2</td>
+              <td class="time-table-column">피카츄 백만볼트</td>
+              <td class="time-table-column">피카츄 백만볼트</td>
+              <td class="time-table-column"></td>
+              <td class="time-table-column">피카츄 백만볼트</td>
+              <td class="time-table-column"></td>
+            </tr>
+            <tr class="time-table-row">
+              <td class="time-table-column">3</td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+            </tr>
+            <tr class="time-table-row">
+              <td class="time-table-column">4</td>
+              <td class="time-table-column">침팬치의 하루</td>
+              <td class="time-table-column">침팬치의 하루</td>
+              <td class="time-table-column"></td>
+              <td class="time-table-column"></td>
+              <td class="time-table-column"></td>
+            </tr>
+            <tr class="time-table-row">
+              <td class="time-table-column">5</td>
+              <td class="time-table-column"></td>
+              <td class="time-table-column"></td>
+              <td class="time-table-column">부팀장이란 무엇인가</td>
+              <td class="time-table-column"></td>
+              <td class="time-table-column"></td>
+            </tr>
+            </tbody>
+          </table>
+        </div>
       </div>
     </section>
+  </section>
+</main>
+<div class="modal-wrapper">
+  <div class="backdrop">
+    <div class="modal">
+      <header class="modal-header">
+        <p class="univ">메가대학교</p>
+        <h3 class="title">수강 과목 생성</h3>
+        <p class="desc">수강 과목 정보를 입력해주세요.</p>
+      </header>
+      <div class="modal-input-wrapper">
+        <input
+                type="text"
+                placeholder="교과목명"
+                class="modal-input subject-name-input"
+        />
+        <input
+                type="text"
+                placeholder="담당교수"
+                class="modal-input subject-professor-input"
+        />
+        <input
+                type="text"
+                placeholder="학점"
+                class="modal-input subject-grade-input"
+        />
+        <input
+                type="text"
+                placeholder="전공 / 교양"
+                class="modal-input subject-type-input"
+        />
+      </div>
+      <footer class="modal-footer">
+        <button type="button" class="subject-create-btn subject-btn">
+          생성
+        </button>
+        <button type="button" class="subject-cancel-btn subject-btn">
+          취소
+        </button>
+      </footer>
+    </div>
   </div>
 </div>
+<div class="modal-update-wrapper">
+  <div class="backdrop">
+    <div class="modalupdate">
+      <header class="modalupdate-header">
+        <p class="univ">메가대학교</p>
+        <h3 class="title">수강 과목 수정</h3>
+        <p class="desc">수강 과목 정보를 입력해주세요.</p>
+      </header>
+      <div class="modalupdate-input-wrapper">
+        <input
+                type="text"
+                placeholder="교과목명"
+                class="modalupdate-input subject-update-name-input"
+        />
+        <input
+                type="text"
+                placeholder="담당교수"
+                class="modalupdate-input subject-update-professor-input"
+        />
+        <input
+                type="text"
+                placeholder="학점"
+                class="modalupdate-input subject-update-grade-input"
+        />
+        <input
+                type="text"
+                placeholder="전공 / 교양"
+                class="modalupdate-input subject-update-type-input"
+        />
+      </div>
+      <footer class="modalupdate-footer">
+        <button type="button" class="subject-update-btn subject-btn">
+          수정
+        </button>
+        <button type="button" class="subject-cancel-btn subject-btn">
+          취소
+        </button>
+      </footer>
+    </div>
+  </div>
+</div>
+</form>
 </body>
 </html>

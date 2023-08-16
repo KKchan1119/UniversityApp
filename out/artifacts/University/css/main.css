@@ -1,602 +1,495 @@
 body {
-    margin: auto;
+    background-color: #f2f4f6;
+}
+
+.show {
+    overflow: visible;
+}
+
+.hide {
+    overflow: hidden;
+}
+
+.container {
+    margin: 0 auto;
     width: 1440px;
-    height: 1020px;
 }
 
-
-/* 헤더 */
-header {
-    width: 1440px;
-    height: 150px;
-}
-
-/* 메가대학교 */
-#header_h {
-    width: 100%;
-    height: 75px;
-    border-bottom: 1px solid #f1f1f1;
-}
-
-#header_h h1 {
-    float: left;
-    margin: 15px 50px;
-}
-
-/* 로그아웃 */
-#logout {
-    float: right;
-    margin: 15px 30px;
-    padding: 10px;
-    font-size: 15px;
-    color: #fff;
-    border-radius: 5px;
-    background-color: #000;
-}
-
-#logout:hover {
-    cursor: pointer;
-}
-
-/* 로그아웃 박스 생성 */
-#logout_box {
-    width: 625px;
-    height: 290px;
-    position: absolute;
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    border-radius: 20px;
+.header {
     background-color: #fff;
-    box-shadow : rgba(0,0,0,0.5) 0 0 0 9999px;
-    display: none;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
 }
 
-/* 로그아웃 박스 내부 */
-#logout_box .logout_box_text {
-    margin: 50px 60px;
-}
-
-#logout_box .logout_box_text h3, h2 {
-    margin-bottom: 10px;
-}
-
-#logout_box .logout_box_text p {
-    color: #bdbdbd;
-}
-
-/* 확인, 취소 버튼 */
-#logout_box .logout_box_check {
-    margin: auto;
-    width: 370px;
-    height: 70px;
+.header .header-top {
+    border-bottom: 1px solid #f2f4f6;
+    padding: 19px 48px;
     display: flex;
     justify-content: space-between;
-}
-
-#logout_box .logout_box_check p {
-    padding-top: 20px;
-    width: 170px;
-    height: 40px;
-    text-align: center;
-    border-radius: 5px;
-    border: 1px solid #000;
-}
-
-#logout_box .logout_box_check p:hover {
-    cursor: pointer;
-}
-
-#logout_box .logout_box_check .ok {
-    color: #fff;
-    background-color: #000;
-}
-
-
-/* OOO님 안녕하세요! */
-#header_b {
-    width: 100%;
-    height: 75px;
-}
-
-#header_b .header_in {
-    margin-left: 50px;
-    line-height: 75px;
-    font-size: 25px;
-    font-weight: 500;
-}
-
-
-/* 메인 */
-#main {
-    width: 100%;
-    height: 870px;
-    background-color: #f8f8ff;
-    box-shadow: 0 5px 10px -5px gray inset;
-}
-
-#profile {
-    padding-top: 50px;
-    width: 100%;
-    height: 215px;
-}
-
-/* 프로필 박스 생성 */
-#profile_in {
-    margin: auto;
-    width: 1300px;
-    height: 215px;
-    border-radius: 20px;
-    box-shadow: 0 5px 10px -3px gray;
-}
-
-/* 프로필 내부 */
-#profile img {
-    float: left;
-    margin: 30px;
-    width: 150px;
-    height: 150px;
-    border-radius: 50%;
-}
-
-#info {
-    float: right;
-    width: 1080px;
-    height: 215px;
-}
-
-#info .info_main {
-    float: left;
-    width: 180px;
-    height: 215px;
-}
-
-#info .info_main>li {
-    margin-top: 25px;
-    font-size: 20px;
-    display: flex;
     align-items: center;
 }
 
-#info .info_main>li:nth-child(1) {
-    margin-top: 35px;
-    font-size: 25px;
+.header .header-top .title {
+    font-size: 32px;
+    font-weight: 700;
 }
 
-#info .info_main>li span {
-    padding: 15px 0 0;
-    margin-left: 10px;
-    font-size: 13px;
-    color: gray;
-}
-
-#info .info_title {
-    margin-top: 40px;
-    float: right;
-    width: 900px;
-    display: flex;
-}
-
-#info .info_title>li {
-    width: 150px;
-    font-size: 18px;
-}
-
-#info .info_title>li:last-child {
-    width: 590px;
-}
-
-#info .info_text {
-    float: right;
-    width: 900px;
-    display: flex;
-}
-
-#info .info_text>li {
-    margin-top: 5px;
-    width: 150px;
-    font-size: 13px;
-    color: gray;
-}
-
-#info .info_text>li:last-child {
-    width: 590px;
-}
-
-
-/* 아래 왼쪽 섹션 */
-#section_l {
-    float: left;
-    width: 920px;
-    height: 605px;
-}
-
-/* 수강 과목 박스 생성*/
-#subject {
-    float: right;
-    margin-top: 50px;
-    width: 840px;
-    height: 515px;
-    border-radius: 20px;
-    box-shadow: 0 5px 10px -3px gray;
-}
-
-/* 수강 과목 내부 */
-#subject .subject_h {
-    width: 840px;
-    height: 100px;
-}
-
-#subject .subject_h h2 {
-    float: left;
-    margin: 30px 30px;
-}
-
-#subject .subject_h p {
-    float: right;
-    margin: 0 30px;
-    font-size: 50px;
-}
-
-#subject .subject_h p:hover {
+.header .header-top .logout-btn {
+    padding: 8px 16px;
+    background-color: #000;
+    border-radius: 4px;
+    color: #fff;
     cursor: pointer;
 }
 
-/* 수강 과목 생성 박스 */
-#create_subject_box {
-    width: 625px;
-    height: 600px;
-    position: absolute;
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    background-color: #fff;
+.header .header-bottom {
+    padding: 22px 48px;
+}
+
+.header .header-bottom .greeting {
+    font-size: 28px;
+    font-weight: 500;
+}
+
+.header .header-bottom .greeting .user-name {
+    font-weight: 700;
+}
+
+.content-top {
+    padding: 48px 64px;
+}
+
+.profile {
     border-radius: 20px;
-    box-shadow : rgba(0,0,0,0.5) 0 0 0 9999px;
-    display: none;
-}
-
-#create_subject_box .create_subject_box_text {
-    margin: 50px;
-}
-
-#create_subject_box .create_subject_box_text h3, h2 {
-    margin-bottom: 10px;
-}
-
-#create_subject_box .create_subject_box_text p {
-    color: #bdbdbd;
-}
-
-#create_subject_box .create_subject_box_text input {
-    padding: 10px;
-    margin-top: 30px;
-    width: 500px;
-    height: 30px;
-    border-radius: 10px;
-    font-size: 20px;
-    background-color: #f1f1f1;
-}
-
-#create_subject_box .create_subject_box_check {
-    margin: auto;
-    width: 180px;
-    height: 40px;
+    padding: 32px;
     display: flex;
+    gap: 52px;
+    background-color: #fff;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+}
+
+.profile .profile-info {
+    display: flex;
+    gap: 63px;
+}
+
+.profile .profile-info .profile-basic-info {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    gap: 18px;
+}
+
+.profile .profile-info .profile-basic-info .name-wrapper {
+    display: flex;
+    align-items: end;
+    gap: 8px;
+}
+
+.profile .profile-info .profile-basic-info .name-wrapper .name {
+    font-size: 32px;
+    font-weight: 700;
+}
+
+.profile .profile-info .profile-basic-info .name-wrapper .role {
+    font-size: 18px;
+    color: #bcb8b8;
+    font-weight: 700;
+}
+
+.profile .profile-info .profile-basic-info .department {
+    font-size: 24px;
+    font-weight: 600;
+}
+
+.profile .profile-info .profile-basic-info .grade {
+    font-size: 24px;
+    font-weight: 600;
+}
+
+.profile .profile-info .profile-detail-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 14px;
+}
+
+.profile .profile-info .profile-detail-info .info-list {
+    display: flex;
+    gap: 94px;
+}
+
+.profile .profile-info .profile-detail-info .info-list .info-item {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.profile
+.profile-info
+.profile-detail-info
+.info-list
+.info-item
+.info-item-title {
+    color: #000;
+    font-size: 22px;
+    font-weight: 600;
+}
+
+.profile
+.profile-info
+.profile-detail-info
+.info-list
+.info-item
+.info-item-desc {
+    color: #bcb8b8;
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.content-bottom {
+    padding: 0 64px 48px;
+    display: flex;
+    gap: 32px;
+}
+
+.subject {
+    display: flex;
+    flex-direction: column;
+    background-color: #fff;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+    border-radius: 20px;
+    width: 100%;
+}
+
+.subject .subject-header {
+    display: flex;
+    padding: 32px;
     justify-content: space-between;
 }
 
-#create_subject_box .create_subject_box_check p {
-    width: 80px;
-    height: 35px;
-    text-align: center;
-    line-height: 35px;
-    border-radius: 5px;
-    border: 1px solid #000;
+.subject .subject-header .subject-title {
+    font-size: 24px;
+    font-weight: 600;
 }
 
-#create_subject_box .create_subject_box_check p:hover {
+.subject .subject-header .subject-add-btn {
+    background: transparent;
+    border: none;
     cursor: pointer;
 }
 
-#create_subject_box .create_subject_box_check .create {
-    color: #fff;
-    background-color: #000;
-}
-
-/* 수강 과목 리스트 */
-#subject .subject_b {
-    margin: auto;
-    width: 780px;
+.subject .subject-content {
+    margin-right: 8px;
+    padding: 0 32px 0px;
     height: 400px;
+    overflow-y: scroll;
 }
 
-#subject .subject_b ul {
-    display: flex;
+.subject .subject-content::-webkit-scrollbar {
+    width: 8px; /* 스크롤바의 너비 */
 }
 
-/* 과목명 */
-#subject .subject_b li {
+.subject .subject-content::-webkit-scrollbar-thumb {
+    height: 30%; /* 스크롤바의 길이 */
+    background: #bcb8b8; /* 스크롤바의 색상 */
+    border-radius: 10px;
+}
+
+.subject .subject-content::-webkit-scrollbar-track {
+    background: #dfdcdc; /*스크롤바 뒷 배경 색상*/
+    border-radius: 10px;
+}
+
+.subject .subject-content .subject-table {
     font-size: 18px;
-    width: 250px;
-    height: 35px;
-    line-height: 35px;
+    font-weight: 600;
     text-align: center;
-    border-bottom: 1px solid rgb(220, 220, 220);
+    width: 100%;
 }
 
-/* 교수 */
-#subject .subject_b li:nth-child(2) {
-    width: 180px;
+.subject .subject-content .subject-table .subject-table-row {
+    border-bottom: 0.25px solid #bcb8b8;
 }
 
-/* 학점 */
-#subject .subject_b li:nth-child(3) {
-    width: 80px;
+.subject
+.subject-content
+.subject-table
+.subject-table-row
+.subject-table-column-subject-name {
+    padding: 16px 90px;
 }
 
-/* 전공/교양 */
-#subject .subject_b li:nth-child(4) {
-    width: 180px;
-}
-
-/* 설정 */
-#subject .subject_b li:last-child {
-    width: 90px;
-}
-
-/* 수강 과목 설정 버튼 */
-#setting_button {
-    width: 100px;
-    height: 60px;
-    position: absolute;
-    position: fixed;
-    top: 80%;
-    left: 55%;
-    text-align: center;
-    background-color: #fff;
-    border-radius: 10px;
-    box-shadow: 0 5px 10px -3px gray;
-}
-
-#setting_button p {
-    line-height: 30px;
-}
-
-#setting_button p:hover {
+.subject
+.subject-content
+.subject-table
+.subject-table-row
+.subject-table-column
+.subject-option-btn {
+    border-radius: 4px;
+    color: #fff;
+    background-color: #000;
+    padding: 6px 14px;
     cursor: pointer;
-    background-color: #f1f1f1;
 }
 
-#setting_button p:nth-child(1):hover {
-    height: 29px;
-    border-top-left-radius: 10px;
-    border-top-right-radius: 10px;
-    border-bottom: 1px solid rgb(220, 220, 220);
+.subject .subject-content .subject-table .subject-table-column {
+    padding: 16px 24px;
 }
 
-#setting_button p:nth-child(2):hover {
-    height: 29px;
-    border-bottom-left-radius: 10px;
-    border-bottom-right-radius: 10px;
-    border-top: 1px solid rgb(220, 220, 220);
+.subject .subject-content .subject-table .subject-table-column,
+.subject-option-column {
+    position: relative;
 }
 
-/* 수강 과목 제거 버튼 생성 */
-#delete_box {
-    width: 625px;
-    height: 290px;
-    position: absolute;
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    border-radius: 20px;
-    background-color: #fff;
-    box-shadow : rgba(0,0,0,0.5) 0 0 0 9999px;
+.subject .subject-content .subject-table .subject-option-column .menu {
     display: none;
+    position: absolute;
+    top: 0;
+    right: 0;
 }
 
-/* 수강 과목 제거 내부 */
-#delete_box .delete_box_text {
-    margin: 50px 60px;
-}
-
-#delete_box .delete_box_text h3, h2 {
-    margin-bottom: 10px;
-}
-
-#delete_box .delete_box_text p {
-    color: #bdbdbd;
-}
-
-/* 확인, 취소 버튼 */
-#delete_box .delete_box_check {
-    margin: auto;
-    width: 370px;
-    height: 70px;
+.student-study-info {
+    width: 424px;
     display: flex;
-    justify-content: space-between;
+    flex-direction: column;
+    gap: 48px;
 }
 
-#delete_box .delete_box_check p {
-    padding-top: 20px;
-    width: 170px;
-    height: 40px;
+.student-study-info .grade {
+    padding: 32px;
+    display: flex;
+    flex-direction: column;
+    background-color: #fff;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+    border-radius: 20px;
+    gap: 24px;
+}
+
+.grade .grade-header .grade-title {
+    font-size: 24px;
+    font-weight: 600;
+}
+
+.grade .grade-table {
+    font-size: 18px;
+    font-weight: 600;
     text-align: center;
-    border-radius: 5px;
+    width: 100%;
+}
+
+.grade .grade-table .grade-table-row {
+    border-bottom: 0.25px solid #bcb8b8;
+}
+
+.grade .grade-table .grade-table-row .grade-table-column {
+    padding: 8px;
+}
+
+.time {
+    padding: 32px;
+    display: flex;
+    flex-direction: column;
+    background-color: #fff;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+    border-radius: 20px;
+    gap: 24px;
+}
+
+.time .time-table-header .time-table-title {
+    font-size: 24px;
+    font-weight: 600;
+}
+
+.time .time-table {
+    width: 100%;
+}
+
+.time .time-table .time-table-row {
+    width: 100%;
+}
+
+.time .time-table .time-table-row .time-table-column {
+    padding: 6px 2px;
+    min-width: 50px;
+    max-width: 50px;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    text-align: center;
+    font-weight: 600;
+}
+
+.modal-wrapper {
+}
+
+.backdrop {
+    display: none;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modal {
+    padding: 64px;
+    background-color: #fff;
+    border-radius: 20px;
+}
+
+.modal .modal-header {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.modal .modal-header .title {
+    color: #000;
+    font-family: Pretendard;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+}
+
+.modal .modal-header .desc {
+    color: rgba(102, 90, 90, 0.55);
+    font-family: Pretendard;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+}
+
+.modal .modal-header .univ {
+    color: #000;
+    font-family: Pretendard;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+}
+
+.modal .modal-input-wrapper {
+    margin-top: 28px;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.modal-footer {
+    margin-top: 44px;
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+}
+
+.modal-input-wrapper .modal-input {
+    border: none;
+    display: flex;
+    width: 495px;
+    padding: 14px 13px 13px 12px;
+    align-items: center;
+    border-radius: 10px;
+    background: var(--gray, #f2f4f6);
+}
+
+.modal-footer .subject-btn {
+    background-color: transparent;
+    padding: 8px 16px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.modal-footer .subject-btn.subject-create-btn {
+    background-color: #000;
+    color: white;
+}
+
+.modal-footer .subject-btn.subject-cancel-btn {
+    background-color: #fff;
     border: 1px solid #000;
 }
 
-#delete_box .delete_box_check p:hover {
-    cursor: pointer;
-}
-
-#delete_box .delete_box_check .ok {
-    color: #fff;
-    background-color: #000;
-}
-
-
-
-/* 수강 과목 수정 박스 */
-#update_subject_box {
-    width: 625px;
-    height: 600px;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+.modalupdate {
+    padding: 64px;
     background-color: #fff;
     border-radius: 20px;
-    box-shadow : rgba(0,0,0,0.5) 0 0 0 9999px;
-    display: none;
 }
 
-#update_subject_box .update_subject_box_text {
-    margin: 50px;
-}
-
-#update_subject_box .update_subject_box_text h3, h2 {
-    margin-bottom: 10px;
-}
-
-#update_subject_box .update_subject_box_text p {
-    color: #bdbdbd;
-}
-
-#update_subject_box .update_subject_box_text input {
-    padding: 10px;
-    margin-top: 30px;
-    width: 500px;
-    height: 30px;
-    border-radius: 10px;
-    font-size: 20px;
-    background-color: #f1f1f1;
-}
-
-#update_subject_box .update_subject_box_check {
-    margin: auto;
-    width: 180px;
-    height: 40px;
+.modalupdate .modalupdate-header {
     display: flex;
-    justify-content: space-between;
+    flex-direction: column;
+    gap: 8px;
 }
 
-#update_subject_box .update_subject_box_check p {
-    width: 80px;
-    height: 35px;
-    text-align: center;
-    line-height: 35px;
-    border-radius: 5px;
-    border: 1px solid #000;
+.modalupdate .modalupdate-header .title {
+    color: #000;
+    font-family: Pretendard;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
 }
 
-#update_subject_box .update_subject_box_check p:hover {
+.modalupdate .modalupdate-header .desc {
+    color: rgba(102, 90, 90, 0.55);
+    font-family: Pretendard;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+}
+
+.modalupdate .modalupdate-header .univ {
+    color: #000;
+    font-family: Pretendard;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+}
+
+.modalupdate .modalupdate-input-wrapper {
+    margin-top: 28px;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.modalupdate-footer {
+    margin-top: 44px;
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+}
+
+.modalupdate-input-wrapper .modalupdate-input {
+    border: none;
+    display: flex;
+    width: 495px;
+    padding: 14px 13px 13px 12px;
+    align-items: center;
+    border-radius: 10px;
+    background: var(--gray, #f2f4f6);
+}
+
+.modalupdate-footer .subject-btn {
+    background-color: transparent;
+    padding: 8px 16px;
+    border-radius: 4px;
     cursor: pointer;
 }
 
-#update_subject_box .update_subject_box_check .update {
-    color: #fff;
+.modalupdate-footer .subject-btn.subject-update-btn {
     background-color: #000;
+    color: white;
 }
 
-
-/* 아래 오른쪽 섹션 */
-#section_r {
-    float: right;
-    width: 520px;
-    height: 605px;
-}
-
-/* 이수 학점 박스 생성 */
-#credit {
-    margin: 50px 30px;
-    width: 425px;
-    height: 190px;
-    border-radius: 20px;
-    box-shadow: 0 5px 10px -3px gray;
-}
-
-/* 이수 학점 내부 */
-#credit .credit_h {
-    width: 425px;
-    height: 80px;
-}
-
-#credit .credit_h h2 {
-    float: left;
-    margin: 30px 30px 0;
-}
-
-/* 학점표 */
-#credit .credit_b {
-    margin: auto;
-    width: 360px;
-    height: 80px;
-}
-
-#credit .credit_b ul {
-    float: left;
-    display: flex;
-    text-align: center;
-}
-
-#credit .credit_b li {
-    width: 120px;
-    height: 35px;
-    line-height: 35px;
-    border-bottom: 1px solid rgb(220, 220, 220);
-}
-
-
-/* 시간표 박스 생성 */
-#timetable {
-    margin: 50px 30px;
-    width: 425px;
-    height: 275px;
-    border-radius: 20px;
-    box-shadow: 0 5px 10px -3px gray;
-}
-
-/* 시간표 내부 */
-#timetable .timetable_h {
-    width: 425px;
-    height: 60px;
-}
-
-#timetable .timetable_h h2 {
-    float: left;
-    margin: 30px 30px 0;
-}
-
-/* 시간표 */
-#timetable .timetable_b {
-    margin: 20px auto;
-    width: 350px;
-    height: 160px;
-}
-
-/* 시간표 내부 */
-#timetable .timetable_b ul {
-    float: left;
-    width: 360px;
-    text-align: center;
-    display: flex;
-}
-
-#timetable .timetable_b ul li {
-    margin-right: 5px;
-    margin-bottom: 5px;
-    width: 60px;
-}
-
-#timetable .timetable_b ul li:last-child {
-    margin-right: 0px;
-}
-
-#timetable .timetable_b ul li p {
-    font-size: 14px;
+.modalupdate-footer .subject-btn.subject-cancel-btn {
+    background-color: #fff;
+    border: 1px solid #000;
 }

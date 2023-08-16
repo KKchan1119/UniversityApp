@@ -4,8 +4,11 @@ import com.us.entity.DAO.UserDAO;
 import com.us.entity.DTO.UserDTO;
 
 import javax.servlet.*;
-import javax.servlet.http.*;
+import javax.servlet.http.Cookie;
 import javax.servlet.annotation.*;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.io.PrintWriter;
 
@@ -30,7 +33,9 @@ public class LoginController extends HttpServlet {
 
         if (user != null) {
             if (user.getPassword().equals(password)) {
-                // 로그인 성공 시 main.html로 리다이렉트
+                Cookie userIdCookie =
+                        new Cookie("userId", String.valueOf(user.getUserId()));
+                response.addCookie(userIdCookie);
                 response.sendRedirect("main.html");
             } else {
                 showLoginFailAlert(response);
