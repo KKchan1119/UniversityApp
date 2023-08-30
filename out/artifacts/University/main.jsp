@@ -23,12 +23,12 @@
     <script src="./js/main.js" defer></script>
 </head>
 <body>
-<form action="main.do" method="post" name="infoPage">
+<form action="main.do" method="post">
     <main class="container">
         <header class="header">
             <div class="header-top">
                 <h1 class="title">메가대학교</h1>
-                <button class="logout-btn" type="button" onclick="fn_doLogout()">로그아웃</button>
+                <button class="logout-btn" type="button" id="logout-btn">로그아웃</button>
             </div>
             <div class="header-bottom">
                 <h2 class="greeting">
